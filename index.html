@@ -1,609 +1,122 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Raihana & Haikal Wedding Invite</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>Raihana & Haikal Wedding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --emerald-dark: #064e3b;
-            --emerald: #0b5c45;
-            --cream: #f9f6f1;
-            --gold: #d4af37;
-            --text-main: #222222;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html, body {
-            font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: var(--emerald-dark);
-            color: var(--text-main);
-            scroll-behavior: smooth;
-        }
-
-        body {
-            min-height: 100vh;
-        }
-
-        .page {
-            max-width: 480px;
-            margin: 0 auto;
-            background: var(--cream);
-            box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
-        }
-
-        section {
-            padding: 32px 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Floating sparkles background */
-        .sparkles::before,
-        .sparkles::after {
-            content: "";
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
-            opacity: 0.7;
-            pointer-events: none;
-            animation: float 14s infinite alternate;
-        }
-        .sparkles::before {
-            top: -80px;
-            left: -80px;
-        }
-        .sparkles::after {
-            bottom: -120px;
-            right: -60px;
-            animation-duration: 18s;
-        }
-
-        @keyframes float {
-            0% { transform: translate(0,0); opacity: 0.7; }
-            100% { transform: translate(20px,-20px); opacity: 0.4; }
-        }
-
-        /* Hero section */
-        .hero {
-            background: radial-gradient(circle at top, #0f766e 0%, var(--emerald-dark) 55%, #022c22 100%);
-            color: #ffffff;
-            text-align: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-
-        .bismillah {
-            font-family: "Playfair Display", serif;
-            letter-spacing: 1px;
-            font-size: 14px;
-            margin-bottom: 12px;
-            color: #fef9c3;
-        }
-
-        .arabic {
-            font-size: 18px;
-            margin-bottom: 16px;
-        }
-
-        .hero-frame {
-            border: 1px solid rgba(212, 175, 55, 0.7);
-            border-radius: 24px;
-            padding: 24px 16px 28px;
-            margin-top: 12px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .hero-frame::before,
-        .hero-frame::after {
-            content: "";
-            position: absolute;
-            border-radius: 999px;
-            border: 1px solid rgba(212, 175, 55, 0.7);
-            width: 32px;
-            height: 32px;
-        }
-
-        .hero-frame::before {
-            top: -9px;
-            left: 28px;
-        }
-
-        .hero-frame::after {
-            bottom: -9px;
-            right: 24px;
-        }
-
-        .hero-names {
-            font-family: "Great Vibes", cursive;
-            font-size: 40px;
-            line-height: 1.2;
-            margin-bottom: 6px;
-        }
-
-        .hero-subtitle {
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #e5e7eb;
-            margin-bottom: 12px;
-        }
-
-        .hero-date {
-            font-family: "Playfair Display", serif;
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-
-        .hero-location {
-            font-size: 14px;
-            color: #d1fae5;
-        }
-
-        .hero-note {
-            margin-top: 16px;
-            font-size: 13px;
-            color: #f9fafb;
-        }
-
-        .scroll-indicator {
-            margin-top: 16px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #e5e7eb;
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .scroll-arrow {
-            width: 18px;
-            height: 18px;
-            border-left: 1px solid #f9fafb;
-            border-bottom: 1px solid #f9fafb;
-            transform: rotate(-45deg);
-            animation: bounce 1.4s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0) rotate(-45deg); }
-            50% { transform: translateY(6px) rotate(-45deg); }
-        }
-
-        /* Section titles */
-        .section-heading {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            text-align: center;
-            margin-bottom: 4px;
-            color: var(--emerald-dark);
-        }
-
-        .section-subtitle {
-            font-size: 13px;
-            text-align: center;
-            color: #6b7280;
-            margin-bottom: 20px;
-        }
-
-        /* Event cards */
-        .cards {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .card {
-            background: #ffffff;
-            border-radius: 18px;
-            padding: 16px 16px 14px;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-            border-top: 3px solid var(--emerald);
-        }
-
-        .card-title {
-            font-family: "Playfair Display", serif;
-            font-size: 18px;
-            margin-bottom: 6px;
-            color: var(--emerald-dark);
-        }
-
-        .card-meta {
-            font-size: 13px;
-            color: #4b5563;
-            margin-bottom: 2px;
-        }
-
-        .card-meta strong {
-            font-weight: 600;
-        }
-
-        .dress-code {
-            font-size: 12px;
-            margin-top: 6px;
-            color: #6b7280;
-        }
-
-        .highlight-pill {
-            display: inline-block;
-            font-size: 11px;
-            padding: 2px 10px;
-            border-radius: 999px;
-            background: rgba(11, 92, 69, 0.07);
-            color: var(--emerald-dark);
-            margin-top: 6px;
-        }
-
-        /* Doa section */
-        .doa-box {
-            background: #fffdf7;
-            border-radius: 16px;
-            padding: 14px 14px 10px;
-            border: 1px dashed rgba(212, 175, 55, 0.7);
-            font-size: 12px;
-            color: #4b5563;
-            margin-bottom: 20px;
-        }
-
-        .doa-title {
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--emerald-dark);
-        }
-
-        /* Buttons */
-        .button-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 18px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 10px 18px;
-            border-radius: 999px;
-            border: none;
-            cursor: pointer;
-            font-size: 13px;
-            text-decoration: none;
-            transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
-            white-space: nowrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--emerald), #047857);
-            color: #ffffff;
-            box-shadow: 0 8px 18px rgba(4, 120, 87, 0.35);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--emerald-dark);
-            border: 1px solid rgba(11, 92, 69, 0.5);
-        }
-
-        .btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-        }
-
-        .btn:active {
-            transform: translateY(0);
-            box-shadow: none;
-        }
-
-        /* Countdown */
-        .countdown {
-            text-align: center;
-            font-size: 13px;
-            color: #374151;
-            margin-bottom: 4px;
-        }
-
-        .countdown-values {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 6px;
-        }
-
-        .countdown-item {
-            min-width: 54px;
-            background: #ffffff;
-            border-radius: 999px;
-            padding: 6px 8px 4px;
-            border: 1px solid #e5e7eb;
-        }
-
-        .count-number {
-            font-weight: 700;
-            color: var(--emerald-dark);
-            font-size: 14px;
-        }
-
-        .count-label {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #6b7280;
-        }
-
-        /* RSVP section */
-        .rsvp {
-            background: linear-gradient(180deg, var(--cream) 0%, #fefdf8 40%, #f9fafb 100%);
-        }
-
-        .rsvp-box {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 18px 16px 14px;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-        }
-
-        .rsvp-text {
-            font-size: 13px;
-            color: #4b5563;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .rsvp-note {
-            font-size: 11px;
-            color: #6b7280;
-            text-align: center;
-            margin-top: 6px;
-        }
-
-        .footer {
-            margin-top: 16px;
-            font-size: 11px;
-            text-align: center;
-            color: #9ca3af;
-        }
-
-        .footer span {
-            color: var(--emerald-dark);
-            font-weight: 600;
-        }
-
-        /* Scroll reveal */
-        .fade-section {
-            opacity: 0;
-            transform: translateY(18px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 520px) {
-            section {
-                padding-inline: 18px;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="page">
-    <!-- Section 1: Hero -->
-    <section class="hero sparkles" id="top">
-        <div class="bismillah">Bismillahirrahmanirrahim</div>
-        <div class="arabic">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
 
-        <div class="hero-frame fade-section">
-            <div class="hero-names">Raihana &amp; Haikal</div>
-            <div class="hero-subtitle">Walimatulurus</div>
-            <div class="hero-date">Sabtu, 29 Ogos 2026</div>
-            <div class="hero-location">De Majlis Luxury Garden Hall, Cyberjaya</div>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-bismillah">Bismillahirrahmanirrahim</p>
+      <h1 class="hero-names">Raihana &amp; Haikal</h1>
+      <p class="hero-subtitle">are getting married</p>
+      <p class="hero-date">29 August 2026 · Cyberjaya</p>
+    </div>
+    <button class="scroll-down" data-target="#details">
+      <span>Scroll to see details</span>
+      <span class="chevron">⌄</span>
+    </button>
+  </section>
 
-            <div class="hero-note">
-                Dengan penuh kesyukuran, kami menjemput anda untuk memeriahkan
-                majlis perkahwinan kami.
-            </div>
+  <!-- Details Section -->
+  <section id="details">
+    <div class="section-inner">
+      <h2 class="section-title">Wedding Details</h2>
+
+      <div class="card">
+        <h3>Akad Nikah</h3>
+        <p><strong>Date:</strong> Saturday, 29 August 2026</p>
+        <p><strong>Time:</strong> 10:00 AM – 12:00 PM</p>
+        <p><strong>Venue:</strong> (To be updated)</p>
+      </div>
+
+      <div class="card">
+        <h3>Wedding Reception</h3>
+        <p><strong>Date:</strong> Saturday, 29 August 2026</p>
+        <p><strong>Time:</strong> 8:00 PM – 11:00 PM</p>
+        <p><strong>Venue:</strong> Cyberjaya, Selangor</p>
+      </div>
+
+      <div class="button-row">
+        <a href="https://maps.google.com" target="_blank" class="btn primary">Open in Google Maps</a>
+        <a href="#" class="btn ghost">Add to Calendar</a>
+      </div>
+
+      <div class="countdown">
+        <p class="countdown-label">Countdown to our big day</p>
+        <div class="countdown-grid">
+          <div class="count-box">
+            <span id="days">0</span>
+            <label>Days</label>
+          </div>
+          <div class="count-box">
+            <span id="hours">0</span>
+            <label>Hours</label>
+          </div>
+          <div class="count-box">
+            <span id="minutes">0</span>
+            <label>Minutes</label>
+          </div>
+          <div class="count-box">
+            <span id="seconds">0</span>
+            <label>Seconds</label>
+          </div>
         </div>
+      </div>
 
-        <a href="#details" class="scroll-indicator">
-            <span>Scroll ke bawah</span>
-            <div class="scroll-arrow"></div>
-        </a>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 2: Details -->
-    <section id="details" class="fade-section">
-        <h2 class="section-heading">Butiran Majlis</h2>
-        <p class="section-subtitle">
-            Semoga kehadiran anda menambah seri dan barakah dalam majlis ini.
-        </p>
+  <!-- RSVP Section -->
+  <section id="rsvp">
+    <div class="section-inner rsvp-inner">
+      <h2 class="section-title light">RSVP &amp; Wishes</h2>
 
-        <div class="cards">
-            <!-- Nikah card -->
-            <div class="card">
-                <div class="card-title">Majlis Akad Nikah</div>
-                <div class="card-meta"><strong>Tarikh:</strong> Sabtu, 29 Ogos 2026</div>
-                <div class="card-meta"><strong>Masa:</strong> 9:00 pagi</div>
-                <div class="card-meta">
-                    <strong>Tempat:</strong> De Majlis Luxury Garden Hall,<br />
-                    Cyberjaya, Third Avenue
-                </div>
-                <div class="dress-code"><strong>Dress code:</strong> Putih</div>
-                <div class="highlight-pill">Majlis Akad Nikah</div>
-            </div>
+      <form id="rsvpForm" class="rsvp-card">
+        <label>
+          Your Name
+          <input type="text" id="guestName" required />
+        </label>
 
-            <!-- Reception card -->
-            <div class="card">
-                <div class="card-title">Majlis Walimatulurus</div>
-                <div class="card-meta"><strong>Tarikh:</strong> Sabtu, 29 Ogos 2026</div>
-                <div class="card-meta"><strong>Masa:</strong> 12:30 tengah hari</div>
-                <div class="card-meta">
-                    <strong>Tempat:</strong> De Majlis Luxury Garden Hall,<br />
-                    Cyberjaya, Third Avenue
-                </div>
-                <div class="dress-code">
-                    <strong>Dress code:</strong> Akan dimaklumkan
-                </div>
-                <div class="highlight-pill">Jamuan &amp; meraikan pengantin</div>
-            </div>
-        </div>
+        <label>
+          Number of Guests
+          <input type="number" id="guestCount" min="1" value="1" required />
+        </label>
 
-        <!-- Doa -->
-        <div class="doa-box">
-            <div class="doa-title">Doa &amp; Harapan</div>
-            <p style="margin-bottom:6px;">
-                "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu
-                isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram
-                kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang."
-                (Surah Ar-Rum: 21)
-            </p>
-            <p>
-                Semoga Allah memberkati ikatan ini dengan kasih sayang, ketenangan dan
-                rahmat yang berpanjangan. آمِيْن يَا رَبَّ الْعَالَمِيْن.
-            </p>
-        </div>
+        <label>
+          Will you attend?
+          <select id="attendance" required>
+            <option value="">Select one</option>
+            <option value="Yes">Yes, I will attend</option>
+            <option value="Maybe">Maybe</option>
+            <option value="No">Unable to attend</option>
+          </select>
+        </label>
 
-        <!-- Countdown -->
-        <div class="countdown">
-            Kira detik menuju hari bahagia:
-        </div>
-        <div class="countdown-values" id="countdown">
-            <div class="countdown-item">
-                <div class="count-number" id="days">--</div>
-                <div class="count-label">Hari</div>
-            </div>
-            <div class="countdown-item">
-                <div class="count-number" id="hours">--</div>
-                <div class="count-label">Jam</div>
-            </div>
-            <div class="countdown-item">
-                <div class="count-number" id="minutes">--</div>
-                <div class="count-label">Minit</div>
-            </div>
-        </div>
+        <label>
+          Your wishes for the couple
+          <textarea id="wishes" rows="3"></textarea>
+        </label>
 
-        <!-- Buttons -->
-        <div class="button-row">
-            <a class="btn btn-primary" id="mapsButton" href="YOUR_GOOGLE_MAPS_URL_HERE" target="_blank" rel="noopener">
-                📍 Buka di Google Maps
-            </a>
-            <a class="btn btn-outline" href="#rsvp">
-                💌 Terus ke RSVP
-            </a>
-        </div>
-    </section>
+        <button type="submit" class="btn whatsapp">Send via WhatsApp</button>
+      </form>
 
-    <!-- Section 3: RSVP -->
-    <section id="rsvp" class="rsvp fade-section">
-        <h2 class="section-heading">RSVP Kehadiran</h2>
-        <p class="section-subtitle">
-            Mohon jasa baik untuk memaklumkan kehadiran anda.
-        </p>
+      <p class="rsvp-note">
+        If the button doesn’t work, you can message us directly at 
+        <strong>+60XXXXXXXXX</strong>.
+      </p>
+    </div>
+  </section>
 
-        <div class="rsvp-box">
-            <p class="rsvp-text">
-                Klik butang di bawah untuk menghantar mesej RSVP melalui WhatsApp.
-                Isikan nama, bilangan tetamu dan pengesahan kehadiran.
-            </p>
-
-            <div class="button-row">
-                <a id="whatsappButton" class="btn btn-primary" href="#" target="_blank" rel="noopener">
-                    💚 RSVP melalui WhatsApp
-                </a>
-            </div>
-
-            <p class="rsvp-note">
-                *Sebarang pertanyaan berkaitan majlis juga boleh dihantar melalui WhatsApp.*
-            </p>
-        </div>
-
-        <div class="footer">
-            Dengan kasih sayang,<br />
-            <span>Raihana &amp; Haikal</span>
-        </div>
-    </section>
-</div>
-
-<script>
-    // ===== Scroll reveal for sections =====
-    const fadeSections = document.querySelectorAll(".fade-section");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                }
-            });
-        },
-        { threshold: 0.15 }
-    );
-
-    fadeSections.forEach((sec) => observer.observe(sec));
-
-    // ===== Countdown (29 Aug 2026, 9:00 AM MYT) =====
-    // MYT is UTC+8
-    const weddingDate = new Date("2026-08-29T09:00:00+08:00").getTime();
-    const daysEl = document.getElementById("days");
-    const hoursEl = document.getElementById("hours");
-    const minutesEl = document.getElementById("minutes");
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-
-        if (distance <= 0) {
-            daysEl.textContent = "0";
-            hoursEl.textContent = "0";
-            minutesEl.textContent = "0";
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor(
-            (distance % (1000 * 60 * 60)) / (1000 * 60)
-        );
-
-        daysEl.textContent = days;
-        hoursEl.textContent = hours;
-        minutesEl.textContent = minutes;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 60 * 1000); // update every minute
-
-    // ===== WhatsApp RSVP Link =====
-    const whatsappButton = document.getElementById("whatsappButton");
-    // Your number: 017-3548072 -> with country code: 60173548072
-    const phoneNumber = "60173548072";
-
-    const waMessage =
-        "Assalamualaikum, saya ingin RSVP untuk majlis perkahwinan Raihana & Haikal.%0A%0ANama:%0ABilangan tetamu:%0AKehadiran: Ya / Tidak";
-
-    const waUrl = `https://wa.me/${phoneNumber}?text=${waMessage}`;
-    whatsappButton.href = waUrl;
-</script>
+  <script src="script.js"></script>
 </body>
 </html>

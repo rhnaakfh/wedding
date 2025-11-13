@@ -1,0 +1,296 @@
+:root {
+  --emerald-dark: #0d3a2f;
+  --emerald: #145a46;
+  --cream: #faf5ef;
+  --gold: #d4af37;
+  --text-dark: #1f2933;
+  --text-light: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  scroll-behavior: smooth;
+  color: var(--text-dark);
+  background: #ffffff;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* HERO */
+#hero {
+  position: relative;
+  background: linear-gradient(180deg, var(--emerald-dark), var(--emerald));
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem 5rem;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.12), transparent 55%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-bismillah {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.hero-names {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  margin: 0;
+}
+
+.hero-subtitle {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+.hero-date {
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+/* Scroll button */
+.scroll-down {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  color: var(--gold);
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.scroll-down .chevron {
+  font-size: 1.3rem;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* DETAILS */
+#details {
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.section-inner {
+  width: 100%;
+  max-width: 480px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 0 1.5rem;
+  color: var(--emerald-dark);
+}
+
+.section-title.light {
+  color: var(--text-light);
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 10px 25px rgba(15, 61, 62, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--emerald-dark);
+}
+
+.card p {
+  margin: 0.15rem 0;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn.primary {
+  background: var(--emerald);
+  color: var(--text-light);
+  box-shadow: 0 10px 20px rgba(20, 90, 70, 0.35);
+}
+
+.btn.ghost {
+  background: #ffffff;
+  color: var(--emerald);
+  border-color: var(--emerald);
+}
+
+.btn.whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  border-color: #1ebe59;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Countdown */
+.countdown {
+  text-align: center;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.count-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0.4rem 0.2rem;
+  box-shadow: 0 5px 10px rgba(15, 61, 62, 0.08);
+}
+
+.count-box span {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.count-box label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+/* RSVP */
+#rsvp {
+  background: linear-gradient(180deg, var(--emerald), var(--emerald-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  color: var(--text-light);
+}
+
+.rsvp-inner {
+  max-width: 480px;
+}
+
+.rsvp-card {
+  background: rgba(250, 245, 239, 0.98);
+  border-radius: 18px;
+  padding: 1.5rem 1.4rem;
+  color: var(--text-dark);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+.rsvp-card label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.65rem;
+}
+
+.rsvp-card input,
+.rsvp-card select,
+.rsvp-card textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #d4d4d4;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.6rem;
+  font-family: inherit;
+}
+
+.rsvp-card textarea {
+  resize: vertical;
+}
+
+.rsvp-note {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  #hero, #details, #rsvp {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
